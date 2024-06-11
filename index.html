@@ -8,6 +8,10 @@
 
   <link rel="shortcut icon" href="./images/icon.png" type="image/x-icon">
 
+
+  <script src="https://kit.fontawesome.com/ca14cbc3b8.js" crossorigin="anonymous"></script>
+
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -672,12 +676,28 @@
   </section>
 
 
+  <!-- scroll -->
+  <a href="#" class="to-top">
+    <i class="fas fa-chevron-up"></i>
+  </a>
+
+
   <!-- Email Js -->
 
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
   </script>
 
   <script>
+
+    const toTop = document.querySelector(".to-top");
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 60) {
+            toTop.classList.add("active");
+        } else {
+            toTop.classList.remove("active");
+        }
+    }) 
 
     emailjs.init("08sk6bQrmDBQiJwqt");
 
@@ -707,7 +727,11 @@
     }
 
     document.getElementById("contact-form").addEventListener("submit", sendEmail);
+
+
   </script>
+
+  
 </body>
 
 </html>
